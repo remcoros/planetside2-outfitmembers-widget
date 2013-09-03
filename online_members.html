@@ -22,8 +22,6 @@
 			result = ko.utils.arrayFilter(result, function(item){
 				return self.HideOffline() ? item.online_status > 0 : true;
 			}).sort(function(l,r){ 
-				if (!l.character || !l.character.name || !r.character || !r.character.name)
-					return -1;
 				return l.character.name.first_lower == r.character.name.first_lower ? 0 : (l.character.name.first_lower > r.character.name.first_lower ? 1 : -1 )
 			});
 			return result;
